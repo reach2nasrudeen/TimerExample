@@ -2,6 +2,7 @@ package com.nasrudeen.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -9,11 +10,13 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     TextView hTextView;
-
+    private String[] values;
+    private int position = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        values = new String[]{"Test 1","Test 2","Test 3","Test 4","Test 5"};
         hTextView = (TextView)findViewById(R.id.idTextView);
         MyTimerTask myTask = new MyTimerTask();
         Timer myTimer = new Timer();
@@ -24,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    hTextView.append("\nPossible");
+                    if(position >= values.length){
+                        position = 0;
+                    }
+                    hTextView.append("\n"+values[position]);
+                    position = position+1;
                 }
             });
         }
     }
-
 }
