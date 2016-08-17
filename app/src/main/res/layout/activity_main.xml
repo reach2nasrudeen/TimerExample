@@ -3,15 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/darker_gray"
     tools:context="com.nasrudeen.myapplication.MainActivity">
-
-    <TextView
-        android:id="@+id/idTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ViewFlipper
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/viewFlipperSpecialNews"
+            android:addStatesFromChildren="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:id="@+id/txtspecialview"
+                android:focusable="false"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Special Page"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:shadowColor="#77000000"
+                android:shadowDx="7.0" android:shadowDy="7.0"
+                android:shadowRadius="8.0" />
+        </ViewFlipper>
+    </RelativeLayout>
 </RelativeLayout>
