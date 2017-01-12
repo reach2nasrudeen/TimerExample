@@ -18,7 +18,7 @@ allprojects {
     }
 }
 task wrapper (type: Wrapper) {
-gradleVersion = '3.2-rc-3'
+gradleVersion = 'gradle-3.2-rc-3'
 }
 
 task clean(type: Delete) {
