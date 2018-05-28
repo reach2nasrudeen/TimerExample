@@ -6,6 +6,8 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipperSpecialNews);
         values = new String[]{"Test 1","Test 2","Test 3","Test 4","Test 5"};
