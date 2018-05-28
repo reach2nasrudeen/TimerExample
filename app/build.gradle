@@ -13,7 +13,7 @@ android {
     }
     signingConfigs {
         releaseSign { // DEFAULT KEYSTORE FILE
-            storeFile file("keystores/release.keystore")
+            storeFile file("release.keystore")
             keyAlias 'androiddebugkey'
             keyPassword 'android'
             storePassword 'android'
